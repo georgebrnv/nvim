@@ -20,8 +20,7 @@ return {
       ensure_installed = {
         "pyright",
         "ruff",
-        "black",
-        "mypy",
+        "black", 
         "debugpy",
       },
     },
@@ -37,7 +36,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = { "pyright" },
-        automatic_installation = true,
+        automatic_installation = false,
       })
     end,
   },
@@ -89,7 +88,11 @@ return {
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
-        python = { "mypy", "ruff" },
+        -- Disabled all linters for Python since:
+        -- - Pyright handles type checking and most diagnostics
+        -- - Ruff is used for formatting via conform.nvim
+        -- This prevents duplicate error messages
+        python = { --[["mypy", "ruff"]] },
       }
 
       -- Auto-lint on save
