@@ -1,0 +1,38 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+*.orig
+
+# Neovim specific
+.netrwhist
+tags
+.tags
+
+# Session files
+Session.vim
+*.vim.session
+
+# Lazy.nvim
+lazy-lock.json.tmp
+
+# LSP
+.luarc.json
+
+# Local plugin development
+/plugin/dev/
+/lua/dev/
+
+# Personal/local config
+local.lua
+.local/
