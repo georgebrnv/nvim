@@ -23,3 +23,17 @@ map("n", "<leader>du", "<cmd>lua require('dapui').toggle()<cr>", { desc = "Toggl
 map("n", "<leader>dpt", "<cmd>lua require('dap-python').test_method()<cr>", { desc = "Debug Python test method" })
 map("n", "<leader>dpc", "<cmd>lua require('dap-python').test_class()<cr>", { desc = "Debug Python test class" })
 map("v", "<leader>dps", "<cmd>lua require('dap-python').debug_selection()<cr>", { desc = "Debug Python selection" })
+
+-- TODO Comments keymaps
+map("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+map("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find TODOs" })
+map("n", "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", { desc = "Find TODOs/FIXMEs" })
+map("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "Todo list (Trouble)" })
+map("n", "<leader>xT", "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>", { desc = "Todo/Fix list (Trouble)" })
