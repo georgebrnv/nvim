@@ -114,6 +114,9 @@ return {
   			"vim", "lua", "vimdoc",
        "html", "css", "python"
   		},
+  		indent = {
+  			enable = true,
+  		},
   	},
   },
 
